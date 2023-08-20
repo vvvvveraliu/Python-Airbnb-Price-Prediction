@@ -1,6 +1,6 @@
 # Python-Price-Prediction
 
-# Introduction
+## Introduction
 - Airbnb is a popular online platform focusing on short-term accommodation and homestay. Airbnb provides a marketplace for hosts (i.e., property owners) to publish their listings (spare houses, apartments, or rooms) for guests to view and lease. In New York City, there are approximately 40,000 listings available for the last quarter.
 
 - This project is primarily motivated to predict the price per day of Airbnb listings based on other features and attributes, (e.g., neighborhood, number of rooms, amenities, etc.) With specific regression models chosen, we are further curious about which features contribute the most to the increase/decrease of the daily price of a listing.
