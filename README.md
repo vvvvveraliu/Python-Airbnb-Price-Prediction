@@ -8,4 +8,10 @@ There are four ipython notebooks:
 1. Price prediction
 2. Superhost classification
 3. Superhost classification neural network
-4. Visualizations 
+4. Visualizations
+
+## Dataset
+The dataset contains 39,881 Airbnb listings in New York for the last quarter, with 75 attributes such as the type of room,  the host’s response rate, etc. These data were scraped in September 2022. All raw data are in string format with units and other punctuation.
+
+## Preprocessing
+Identifiers and irrelevant attributes, such as URL links and host names, are first eliminated. Each column is then converted to its proper type using regular expression. Approximately 30 columns have missing values. Depending on whether the column is categorical or numerical, these values are replaced with false values or column averages. Listing prices range from 0 to 16,500, so listings with prices above 1,500 or below 10 are removed, leaving a proposed dataset of 39,560 rows. Data related to minimum and maximum length of stay are transformed into categorical variables: short-term and long-term, indicating whether the listing could be rented within seven days or for more than three months. The host's registration date is also converted from a date-time format to the number of months since he/she became a host. Moreover, after visualization of the correlation matrix, highly correlated variables are removed, such as the total number of listings by host and the number of listings by the host, leaving 49 variables. Numerical features are scaled using a standard scaler while categorical features are further encoded according to their characteristics. In detail, the target encoder is used for geographical data with over 200 categories, and the ordinal encoder is used for sequential data. Other categorical variables are one hot encoded. The prices are logarithmically transformed due to their large range and high skewness. Sampling is separately performed in these two tasks. Features are selected according to their characteristics and correlation to the target variables.
