@@ -26,3 +26,19 @@ All 49 variables are selected to conduct prediction
 - For Linear regression, cross-validation and grid search is used to optimize the hyperparameter alpha.
 - For the Regression Tree, grid search is used to find optimal parameters, and pre-pruning is used to prevent overfitting by setting the max depth of the decision tree model.
 - The Neural Network model has 6 dense layers with ‘relu’ as activation and 3 dropout layers with a rate of 20%. To avoid weight explosion due to highly variable price data, the parameters in 3 major hidden layers are penalized by Elastic Net Regularization.
+
+Mean squared error (MSE) is used to compare the results of the different models. 
+- Regression tree performs the best with an MSE of 0.18 on test data
+- The top four features: 'room_type0', 'neighbourhood_cleansed', 'bath_num', and 'accommodates'. 
+
+## Superhost Classification 
+Three types of models are chosen:
+- Logistic Regression
+- Trees: Decision Trees, Random Forest, Gradient Boosting Trees, and XGBoost Trees 
+- Neural Networks
+
+16 variables are used for classification. Cross-validation is performed for every model and regularization is tuned for logistic regression. Since the distribution of labels is highly imbalanced (20% superhost and 80%, not superhost), we tried different sampling methods, including stratified sampling, synthetic minority oversampling technique (SMOTE), and balanced class weights to process the data before passing them to the models. Among the three sampling methods, we found that SMOTE gives the highest AUC. Therefore, we focused on the SMOTE models and compared the results of their corresponding AUC scores for the test dataset. 
+
+AUC scores: 
+- Neural Network and Random Forest models give relatively good performance among the six models.
+- The top 3 features are: “host_response_rate”, “host_acceptance_rate”, and “host_has_profile_pic”.
