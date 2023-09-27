@@ -1,4 +1,4 @@
-# Python-Price-Prediction
+# Airbnb Price Prediction & Superhost Classification 
 
 ## Introduction
 
